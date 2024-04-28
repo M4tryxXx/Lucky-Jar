@@ -1,0 +1,27 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    background-color: antiquewhite;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+header {
+    height: 150px;
+    padding: 1rem;
+}
+
+.logo {
+    height: 100%;
+    padding: 0;
+    width: 150px;
+    height: 150px;
+    animation: spin 7s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
