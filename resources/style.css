@@ -3,21 +3,22 @@
 }
 
 html {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: #fad7dc;
     width: 90%;
-    margin: 1rem auto;
+    margin: .7rem auto;
 }
 
 header {
     height: 150px;
     padding: 1rem;
     display: flex;
-    border-bottom: 1px solid darkgreen ;
-    
+    border-bottom: 4px double darkred;
+    width: 95%;
+    margin: auto;
 }
 
 .logo {
@@ -38,5 +39,82 @@ header h1 {
     font-weight: 700;
     width: 84%;
     text-align: center;
+    color: #001530;
+    text-shadow: 3px 3px 5px #420000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+main {
+    margin-top: 1rem;
+}
+
+.quantity {
+    font-size: 1.3rem;
+    color: #001530;
+    text-shadow: 2px 2px 5px #4200008c;
+}
+
+p {
+    font-weight: 700;
+}
+
+.instructionscontent {
+    display: block;
+    text-align: center;
+}
+
+.instructions {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    border: 4px double darkred;
+    border-radius: 15px;
+    color: #001530;
+    text-shadow: 2px 2px 5px #4200008c;
+    padding: .4rem 1rem;
+}
+
+.message-content {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.draw-button {
+    padding: .5rem 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #420000;
+    margin: 3px auto;
+    box-shadow: -1px 2px 0;
+}
+
+.draw-button:active{
+    margin: 0px auto;
+    box-shadow: none;
+}
+
+.back-button {
+    padding: .5rem 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #420000;
+    margin: 3px auto;
+    box-shadow: -1px 2px 0;
+    display: none;
+}
+
+.back-button:active{
+    margin: 0px auto;
+    box-shadow: none;
+}
+
+footer {
+    border-top: 4px double darkred;
+    font-size: .8rem;
+    text-align: center;
+    padding: .6rem;
 }
 
