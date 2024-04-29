@@ -89,11 +89,15 @@ p {
     color: #420000;
     margin: 3px auto;
     box-shadow: -1px 2px 0;
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0
 }
 
 .draw-button:active{
     margin: 0px auto;
     box-shadow: none;
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0
 }
 
 .back-button {
@@ -104,11 +108,15 @@ p {
     margin: 3px auto;
     box-shadow: -1px 2px 0;
     display: none;
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0
 }
 
 .back-button:active{
     margin: 0px auto;
     box-shadow: none;
+    -webkit-appearance: none; 
+    -webkit-border-radius: 0
 }
 
 footer {
@@ -118,5 +126,7 @@ footer {
     padding: .6rem;
     text-shadow: 2px 2px 5px #4200008c;
 }  
+
+
 
 
