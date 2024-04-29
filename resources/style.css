@@ -30,9 +30,14 @@ header {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 header h1 {
     font-family: "IBM Plex Serif", serif;
@@ -93,7 +98,7 @@ p {
     width: 8rem;
     background-color: #e3e4f0;
     font-size: 1rem;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -webkit-border-radius: 0
 }
 
@@ -101,13 +106,13 @@ p {
     background-color: #c5c5cf;
 }
 
-.draw-button:active{
+.draw-button:active {
     margin: 0px auto;
     box-shadow: none;
     height: 2.3rem;
     width: 8rem;
     background-color: #adadb9;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -webkit-border-radius: 0;
 }
 
@@ -123,7 +128,7 @@ p {
     width: 10rem;
     background-color: #e3e4f0;
     font-size: 1rem;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -webkit-border-radius: 0
 }
 
@@ -131,13 +136,13 @@ p {
     background-color: #c5c5cf;
 }
 
-.back-button:active{
+.back-button:active {
     margin: 0px auto;
     box-shadow: none;
     height: 2.4rem;
     width: 10rem;
     background-color: #adadb9;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     -webkit-border-radius: 0
 }
 
@@ -147,8 +152,4 @@ footer {
     text-align: center;
     padding: .6rem;
     text-shadow: 2px 2px 5px #4200008c;
-}  
-
-
-
-
+}
