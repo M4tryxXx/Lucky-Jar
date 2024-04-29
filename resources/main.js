@@ -17,7 +17,6 @@ drawBtn.addEventListener('click', () => {
     contentBox.appendChild(message);
     drawBtn.style = 'display: none;';
     goBack.style = 'display: block;';
-    buttonAllign.style = 'text-align: center;';
 });
 
 
