@@ -98,8 +98,6 @@ p {
     width: 8rem;
     background-color: #e3e4f0;
     font-size: 1rem;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0
 }
 
 .draw-button:hover {
@@ -112,8 +110,6 @@ p {
     height: 2.3rem;
     width: 8rem;
     background-color: #adadb9;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
 }
 
 .back-button {
@@ -128,8 +124,6 @@ p {
     width: 10rem;
     background-color: #e3e4f0;
     font-size: 1rem;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0
 }
 
 .back-button:hover {
@@ -142,8 +136,6 @@ p {
     height: 2.4rem;
     width: 10rem;
     background-color: #adadb9;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0
 }
 
 footer {
