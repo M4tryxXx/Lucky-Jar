@@ -7,6 +7,8 @@ const drawBtn = document.getElementById('draw-button');
 const goBack = document.getElementById('back-button');
 
 
+
+
 const messageList = [
     'Trust the wait, Embrace the uncerteinty, Enjoy the beauty of becoming!',
     'Wake up with Determination, Go to bed with Satisfaction!',
@@ -68,11 +70,19 @@ const messageList = [
 ];
 
 /* , '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',];*/
-
-let messagesDrawn = [];
+let retString;
+let retArray;
+retString = localStorage.getItem("contentTotals");
+let messagesDrawn = JSON.parse(retString);
+if (messagesDrawn === null) {
+    messagesDrawn = [];
+}
 let messageNum;
 let messageFinal;
 let drawsLeft;
+let string;
+
+
 
 
 
@@ -92,6 +102,8 @@ const takeMessage = () => {
 
 }
 
+drawsLeft = messageList.length - messagesDrawn.length + 1;
+messageNumber.innerHTML = `${drawsLeft} Notes left`
 
 //Create an event listener for Draw button
 
@@ -106,6 +118,8 @@ drawBtn.addEventListener('click', () => {
     contentBox.appendChild(message);
     drawBtn.style = 'display: none;';
     goBack.style = 'display: block;';
+    string = JSON.stringify(messagesDrawn);
+    localStorage.setItem("contentTotals", string);
 });
 
 
@@ -119,3 +133,7 @@ goBack.addEventListener('click', () => {
     drawBtn.style = 'display: block;';
     goBack.style = 'display: none;';
 })
+
+//messagesDrawn = messagesDrawn + retArray;
+
+
