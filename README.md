@@ -1,4 +1,4 @@
-# Today What?
+# Lucky Jar!
 
 ## Portofolio group project, Codecademy.
 
