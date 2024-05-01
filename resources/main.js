@@ -105,7 +105,7 @@ const takeMessage = () => {
         messagesDrawn = [];
     }
 //Used to check if message has been returned before, if true it will draw another message and check again until the message drawn was not shaved before at which point it will be saved rerurned and pushed in drawn array.
-    while (messagesDrawn.includes(messageNum) === true) {
+    while (messagesDrawn.includes(messageNum) === true || messageNum === 0) {
         messageNum = Math.floor(Math.random() * messageList.length);
         //console.log(messageNum);
     }
@@ -117,12 +117,21 @@ const takeMessage = () => {
 
 //Checking how many draws are left to be drawn by user.
 drawsLeft = messageList.length - messagesDrawn.length + 1;
-messageNumber.innerHTML = `Notes in the jar: ${drawsLeft} !`
+messageNumber.innerHTML = `Notes in the jar: ${drawsLeft} !`;
+if(drawsLeft === 0) {
+    messagesDrawn = [];
+    drawsLeft = messageList.length - messagesDrawn.length;
+}
 
 //Create an event listener for Draw button
 
 drawBtn.addEventListener('click', () => {
     drawsLeft = messageList.length - messagesDrawn.length;
+    if(drawsLeft === 0) {
+    messagesDrawn = [];
+    drawsLeft = messageList.length - messagesDrawn.length;
+}
+
     messageFinal = takeMessage();
     messageNumber.innerHTML = `Note no: ${messageNum}`;
     let message = document.createElement('h2');
