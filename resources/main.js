@@ -117,7 +117,7 @@ const takeMessage = () => {
 
 //Checking how many draws are left to be drawn by user.
 drawsLeft = messageList.length - messagesDrawn.length + 1;
-messageNumber.innerHTML = `${drawsLeft} Notes left`
+messageNumber.innerHTML = `Notes in the jar: ${drawsLeft}`
 
 //Create an event listener for Draw button
 
@@ -126,7 +126,7 @@ drawBtn.addEventListener('click', () => {
     messageFinal = takeMessage();
     messageNumber.innerHTML = `Note no: ${messageNum}`;
     let message = document.createElement('h2');
-    message.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c;';
+    message.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c; font-style: italic;';
     message.innerHTML = messageFinal;
     contentBox.innerHTML = '';
     contentBox.appendChild(message);
@@ -141,7 +141,7 @@ goBack.addEventListener('click', () => {
     messageNumber.innerHTML = `${drawsLeft} Notes left!`;
     let afterMessage = document.createElement('h2');
     afterMessage.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c;';
-    afterMessage.innerHTML = 'Do you wanna try another one?';
+    afterMessage.innerHTML = 'Do you wanna pull another one?';
     contentBox.innerHTML = '';
     contentBox.appendChild(afterMessage);
     drawBtn.style = 'display: block;';
