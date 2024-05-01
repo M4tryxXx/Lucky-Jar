@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    height: 150px;
+    height: 100px;
     padding: 1rem;
     display: flex;
     width: 95%;
@@ -24,7 +24,7 @@ header {
 
 .logo {
     padding: 0;
-    width: 25%;
+    width:30%;
     height: auto;
     max-width: 150px;
     animation: spin 7s linear infinite;
