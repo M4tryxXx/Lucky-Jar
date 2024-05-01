@@ -1,14 +1,31 @@
 
 
-//Declaring variables
+//Global variables
 let messageNumber = document.getElementById('quantity');
 let contentBox = document.getElementById('instructions');
 const drawBtn = document.getElementById('draw-button');
 const goBack = document.getElementById('back-button');
 
+//Used to save extracted data from local storage.
+let retString;
+let retArray;
 
+//Used to store random number that we will use it to extract the random message.
+let messageNum;
 
+//Used to store the message in a variable.
+let messageFinal;
 
+//Used to store the number of messages left to draw.
+let drawsLeft;
+
+//Used to save messages indexes that has been drwan into an array so it will not be drwan again until all messages from the messages array has been drawn, bassically you will not see a message twice until all the messages from the messages array has been seen once.
+let messagesDrawn;
+
+//Used to convert the array containing messages indexes that has already been extracted and it is stored into an array into a string to be saved into local storage.
+let string;
+
+//Used to store messages into an array.
 const messageList = [
     'Trust the wait, Embrace the uncerteinty, Enjoy the beauty of becoming!',
     'Wake up with Determination, Go to bed with Satisfaction!',
@@ -70,28 +87,24 @@ const messageList = [
 ];
 
 /* , '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',];*/
-let retString;
-let retArray;
+//Getting the string with messages indexes that has been drawn and saved last time user drawn a message.
 retString = localStorage.getItem("contentTotals");
-let messagesDrawn = JSON.parse(retString);
+
+//Converting the string containing messages indexes that has been already drawn and saved into local storage back to an array and assign it to messagesDrawn variable so the program knows what messages the user already drawn.
+messagesDrawn = JSON.parse(retString);
+//For first time use or when there is nothing in local storage.
 if (messagesDrawn === null) {
     messagesDrawn = [];
 }
-let messageNum;
-let messageFinal;
-let drawsLeft;
-let string;
 
-
-
-
-
+//Function that take a random message, also checks if the message drawn has been drawn before, it will return a message that has not been drawn before, once all messages from the messagesList array has been returned it will reset.
 const takeMessage = () => {
+    //Getting a random number for use it to extract a random message from the list.
     messageNum = Math.floor(Math.random() * messageList.length);
     if (messagesDrawn.length === messageList.length - 1) {
         messagesDrawn = [];
     }
-
+//Used to check if message has been returned before, if true it will draw another message and check again until the message drawn was not shaved before at which point it will be saved rerurned and pushed in drawn array.
     while (messagesDrawn.includes(messageNum) === true) {
         messageNum = Math.floor(Math.random() * messageList.length);
         //console.log(messageNum);
@@ -102,6 +115,7 @@ const takeMessage = () => {
 
 }
 
+//Checking how many draws are left to be drawn by user.
 drawsLeft = messageList.length - messagesDrawn.length + 1;
 messageNumber.innerHTML = `${drawsLeft} Notes left`
 
