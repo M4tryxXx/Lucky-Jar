@@ -126,7 +126,7 @@ drawBtn.addEventListener('click', () => {
     messageFinal = takeMessage();
     messageNumber.innerHTML = `Note no: ${messageNum}`;
     let message = document.createElement('h2');
-    message.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c; text-style: italic;';
+    message.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c; font-style: italic;';
     message.innerHTML = messageFinal;
     contentBox.innerHTML = '';
     contentBox.appendChild(message);
