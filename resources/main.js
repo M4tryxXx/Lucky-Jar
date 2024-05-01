@@ -55,7 +55,7 @@ const messageList = [
     'Happiness is free, sprinkle that stuff everywhere!',
     'Think positive, feel positive and positive things will happen!',
     'Happiness cannot be travelled to, owned, earned, worn or consumed. Happiness comes from within!',
-    'keep going! Keep growing!',
+    'Keep going! Keep growing!',
     'Someday everythingll make perfect sense. So for now, laugh at the confusion, smile through the tears and keep reminding yourself that everything happens for a reason!',
     'It`s kind of fun to do the impossible!',
     'The happiness of your life depends upon the quality of your thoughts!',
@@ -140,7 +140,7 @@ drawBtn.addEventListener('click', () => {
 goBack.addEventListener('click', () => {
     messageNumber.innerHTML = `Notes in the jar: ${drawsLeft} !`;
     let afterMessage = document.createElement('h2');
-    afterMessage.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c;';
+    afterMessage.style = 'color: #001530; text-shadow: 2px 2px 5px #4200008c; font-weight: 400;';
     afterMessage.innerHTML = 'Do you wanna pull one more?';
     contentBox.innerHTML = '';
     contentBox.appendChild(afterMessage);
